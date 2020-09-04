@@ -31,9 +31,15 @@ body { /* For parallax */
     transform: translateZ(-1px) scale(2);
 }
 
-header, main, footer {
+header, main, footer, article { /* Induces weird features in articles (<p> smaller than one full line are centered) */
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+footer ul {
+    display: flex;
+    flex-direction: row;
     justify-content: space-around;
     align-items: center;
 }
@@ -41,8 +47,12 @@ header, main, footer {
 article {
     max-width: 70%;
     text-align: justify;
+    background-color: rgba(111, 111, 111, 0.5)
 }
 
+h1, h2 {
+    text-align: center;
+}
 a {
     text-decoration: none;
 }
