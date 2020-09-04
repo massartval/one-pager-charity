@@ -1,0 +1,56 @@
+html {
+    box-sizing: border-box;
+    overflow: hidden; /* For parallax */
+}
+
+body { /* For parallax */
+    height: 100vh;
+    perspective: 1px;
+    transform-style: preserve-3d;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.parallax-wrapper { /* For parallax */
+    width: 100vw;
+    height: 100vh;
+/*  padding-top: 20vh; */
+    transform-style: preserve-3d;
+}
+.parallax-wrapper::before { /* For parallax */
+    content:"";
+    width: 100vw;
+/*  height: 960px; Height of the background picture */
+    height: 200vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("media/motorcycle-552787_1280.jpg"); 
+    background-size: cover;
+    z-index: -1;
+    transform: translateZ(-1px) scale(2);
+}
+
+header, main, footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+article {
+    max-width: 70%;
+    text-align: justify;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* Call to action "Nous soutenir" */
+article:last-of-type {}
+
+/* Footer */
+li p:first-of-type {}
+li p:last-of-type {}
