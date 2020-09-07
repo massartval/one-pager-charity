@@ -1,3 +1,15 @@
+/* General */
+
+@font-face {
+    font-family: "BootsAndSpurs";
+    src: url(BootsAndSpurs-mr6m.ttf);
+}
+@font-face {
+    font-family: "BootsAndSpurs";
+    src: url(BootsAndSpurs-mr6m.ttf);
+    font-weight: bold;
+}
+
 html {
     box-sizing: border-box;
     overflow: hidden; /* For parallax */
@@ -22,45 +34,126 @@ body { /* For parallax */
     width: 100vw;
 /*  height: 960px; Height of the background picture */
     height: 200vh;
+    margin-top: 250vh; /* Original value: 50vh */
     position: absolute;
     top: 0;
     left: 0;
     background-image: url("media/motorcycle-552787_1280.jpg"); 
     background-size: cover;
     z-index: -1;
-    transform: translateZ(-1px) scale(2);
+    transform: translateZ(-5px) scale(7); /* Original values: -1px, 2 */
 }
 
-header, main, footer, article { /* Induces weird features in articles (<p> smaller than one full line are centered) */
+header, main, footer { 
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
 }
+
+/* Header */
+
+header {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 20%, rgba(111, 111, 111, 0.9) 80%, rgba(111, 111, 111, 0.7) 100%);
+    padding-bottom: 2em;
+}
+h1, h2 {
+    align-self: center;
+    font-family: "BootsAndSpurs", serif;
+    padding: 1em;
+    background-image: radial-gradient(rgb(137, 55, 34), rgb(84, 17, 1), rgb(29, 6, 0));
+    color: rgb(29, 6, 0)
+}
+h1 {
+    font-size: 5em;
+    border-radius: 10%;
+}
+h2 {
+    text-transform: uppercase;
+    border-radius: 5%;
+}
+
+/* Main */
+
+article {
+    display: flex;  
+    flex-direction: column;
+    justify-content: space-around; 
+    align-items: flex-start; 
+    max-width: 60%;
+    text-align: justify;
+    background-color: rgba(111, 111, 111, 0.7);
+    border: 1px solid rgb(111, 111, 111);
+    margin-top: 5em;
+    padding: 5em;
+    padding-top: 2.5em;
+}
+
+.infos-boutique, .infos-partenaire {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    align-self: center;
+    margin-top: 2em;
+    padding: 1.5em;
+    background-color: rgba(100, 111, 0, 0.2);
+    border: 1px solid rgb(100, 111, 0);
+}
+
+/* Call to action "Nous soutenir" */
+article:last-of-type {
+    background-color: rgba(111, 30, 30, 0.7);
+    border: 1px solid rgb(111, 0, 0);
+}
+
+button {
+    align-self: center;
+    padding: 1em;
+    background-color:  rgba(100, 111, 0, 0.7)
+}
+
+/* Footer */
+
+footer {
+    margin-top: 5em;
+    padding-top: 2.5em;
+    padding-bottom: 2.5em;
+    background-color: rgba(111, 111, 111, 0.7);
+}
 footer ul {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
+    list-style: none;
 }
 
-article {
-    max-width: 70%;
-    text-align: justify;
-    background-color: rgba(111, 111, 111, 0.5)
-}
-
-h1, h2 {
-    text-align: center;
-}
-a {
-    text-decoration: none;
-}
-
-
-/* Call to action "Nous soutenir" */
-article:last-of-type {}
-
-/* Footer */
 li p:first-of-type {}
 li p:last-of-type {}
+
+/* Links */
+a {
+    text-decoration: none;
+    color:#222222;
+}
+a:not(.figure-link), a:not(.button-link) {
+    background-color: rgba(100, 111, 0, 0.5);
+    border: 1px solid rgb(100, 111, 0);
+}
+a.figure-link {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+a.button-link {
+    background-color: transparent;
+    border: 1px solid rgb(100, 0, 0);
+    background-color: rgba(100, 0, 0, 0.5);
+    color: rgb(111, 0, 0);
+    margin-top: 1em;
+    margin-bottom: -1em;
+    padding: 1em;
+    align-self: center;
+}
